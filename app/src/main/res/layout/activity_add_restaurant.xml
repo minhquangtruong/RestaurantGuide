@@ -98,15 +98,5 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/background"
         />
-    <EditText
-        android:id="@+id/output"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/addButton"
-        android:layout_marginTop="16dp"
-        android:hint="Enter Restaurant Description"
-        android:inputType="text"
-        android:padding="8dp"
-        android:background="@drawable/background"/>
 
 </RelativeLayout>

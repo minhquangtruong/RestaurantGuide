@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class AddRestaurantActivity extends AppCompatActivity {
 
-    private EditText inpName, inpAddress, inpPhone, inpDescription,output;
+    private EditText inpName, inpAddress, inpPhone, inpDescription;
     AutoCompleteTextView inpTag;
     private String name, address, phone ,description,tag,rating;
     private RatingBar ratingBar;
@@ -30,7 +30,6 @@ public class AddRestaurantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_restaurant);
         dbHelper = new DatabaseHelper(this);
-        output = findViewById(R.id.output);
         add = findViewById(R.id.addButton);
         inpName = findViewById(R.id.restaurant_name);
         inpAddress = findViewById(R.id.restaurant_address);
@@ -71,7 +70,7 @@ public class AddRestaurantActivity extends AppCompatActivity {
                 ""+tag,
                 ""+rating
         );
-        output.setText(""+id);
+
 
     }
 
