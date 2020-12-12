@@ -2,6 +2,7 @@ package com.example.restaurantguide;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -46,6 +47,7 @@ public class AddRestaurantActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getData();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
 

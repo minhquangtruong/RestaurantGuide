@@ -54,33 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
         //init db
         db = new DatabaseHelper(this);
-
         //Search bar setup
         materialSearchBar.setHint("Search");
         materialSearchBar.setCardViewElevation(10);
-        loadSuggestList();
-        //Search
-        materialSearchBar.addTextChangeListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                List<String> suggest = new ArrayList<>();
-                for(String search:suggestList){
-                    if(search.toLowerCase().contains(materialSearchBar.getText().toLowerCase()))
-                        suggest.add(search);
-                }
-                materialSearchBar.setLastSuggestions(suggest);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+      //Search
         materialSearchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
             @Override
             public void onSearchStateChanged(boolean enabled) {
@@ -107,10 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void loadSuggestList() {
-        suggestList = db.getRestaurantName();
-        materialSearchBar.setLastSuggestions(suggestList);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
