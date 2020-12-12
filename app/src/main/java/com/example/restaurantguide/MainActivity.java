@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     MaterialSearchBar materialSearchBar;
 
     DatabaseHelper db;
-    List<String> suggestList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
