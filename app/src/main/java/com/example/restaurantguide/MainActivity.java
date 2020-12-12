@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         //init db
         db = new DatabaseHelper(this);
         //Search bar setup
-        materialSearchBar.setHint("Search");
+        materialSearchBar.setHint("Restaurant name or tag");
         materialSearchBar.setCardViewElevation(10);
       //Search
         materialSearchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
