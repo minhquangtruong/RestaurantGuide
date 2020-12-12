@@ -112,6 +112,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }while (cursor.moveToNext());
 
         }
+
+        Cursor cursor1 = qb.query(db,sqlSelect,Constants.C_TAG+" LIKE ?",new String[]{"%"+name+"%"},null ,null,null);
+
+        if(cursor1.moveToFirst()){
+            do{
+                Restaurant restaurant = new Restaurant();
+                restaurant.setrName(cursor1.getString(cursor.getColumnIndex(Constants.C_NAME)));
+                restaurant.setrAddress(cursor1.getString(cursor.getColumnIndex(Constants.C_ADDRESS)));
+                restaurant.setrPhone(cursor1.getString(cursor.getColumnIndex(Constants.C_PHONE)));
+                restaurant.setrDesc(cursor1.getString(cursor.getColumnIndex(Constants.C_DESC)));
+                restaurant.setrTag(cursor1.getString(cursor.getColumnIndex(Constants.C_TAG)));
+                restaurant.setrRating(cursor1.getString(cursor.getColumnIndex(Constants.C_RATING)));
+
+                result.add(restaurant);
+            }while (cursor1.moveToNext());
+
+        }
+
+
         return result;
     }
+
 }

@@ -9,7 +9,7 @@
         android:id="@+id/search_bar"
         android:layout_alignParentTop="true"
         app:mt_speechMode="false"
-        app:mt_hint="Search"
+        app:mt_hint="Restaurant name or tag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <androidx.recyclerview.widget.RecyclerView
