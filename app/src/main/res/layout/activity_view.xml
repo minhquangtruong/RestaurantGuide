@@ -149,6 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
             <Button
+                android:id="@+id/btnEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight=".50"
@@ -158,16 +159,7 @@
                 android:textColor="@color/colorBlack"
                 android:text="Email"
                 android:layout_marginRight="10dp"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight=".5"
-                android:background="@drawable/share_button"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorBlack"
-                android:text="Share"
-                android:layout_marginRight="10dp"/>
+
         </LinearLayout>
 
 
