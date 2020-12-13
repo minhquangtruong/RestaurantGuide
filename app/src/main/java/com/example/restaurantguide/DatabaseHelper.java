@@ -65,6 +65,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    //Map
+    public List<String> getLocation (String id){
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        String[] sqlSelect = {Constants.C_ID};
+        qb.setTables(Constants.TABLE_NAME);
+        Cursor cursor = qb.query(db,sqlSelect,null,null,null ,null,null);
+        //Get restaurant address by ID
+        List<String> result = new ArrayList<>();
+        if(cursor.moveToFirst()){
+            do{
+                String restaurantAddress =cursor.getString(cursor.getColumnIndex(Constants.C_ADDRESS));
+                result.add(restaurantAddress);
+
+            }while (cursor.moveToNext());
+            db.close();
+        }
+        return result;
+    }
+
+
+
+
     public List<Restaurant> getRestaurant(){
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
@@ -111,6 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return result;
     }
+
     public List<Restaurant> findRestaurantByName(String name){
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
