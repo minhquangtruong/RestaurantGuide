@@ -86,7 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    
+
 
 
     public List<Restaurant> getRestaurant(){
