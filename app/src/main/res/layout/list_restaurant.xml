@@ -3,25 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="8dp"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="#ffff00"
+    app:cardElevation="8dp">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_margin="8dp"
-        android:background="@color/colorWhite"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#ffff00"
+        android:orientation="horizontal">
+
         <androidx.appcompat.widget.AppCompatImageView
-            android:src="@drawable/ic_baseline_restaurant_24"
             android:layout_width="70dp"
-            android:layout_height="70dp"/>
+            android:layout_height="70dp"
+            android:tint="#000000"
+            android:src="@drawable/ic_baseline_restaurant_24" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="9">
+            android:layout_weight="9"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/name"
@@ -31,7 +34,8 @@
                 android:gravity="center_vertical|start"
                 android:text="GoodRestaurant"
                 android:textAllCaps="true"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#891b5b"/>
 
             <TextView
                 android:id="@+id/address"
@@ -68,25 +72,28 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:orientation="vertical">
+
             <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
                 android:id="@+id/remove"
-                android:src="@drawable/ic_baseline_delete_24"
-                android:background="@null"
-                />
-            <ImageButton
+                android:tint="#e53935"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:id="@+id/edit"
-                android:src="@drawable/ic_baseline_edit_icon"
                 android:background="@null"
-                />
+                android:src="@drawable/ic_baseline_delete_24" />
+
+            <ImageButton
+                android:id="@+id/edit"
+                android:tint="#4caf50"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_edit_icon" />
 
             <ImageButton
                 android:id="@+id/map"
