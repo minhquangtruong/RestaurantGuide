@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AddRestaurantActivity.class));
+                AddActivity();
             }
         });
         //init View
@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void AddActivity(){
         Intent start = new Intent(getApplicationContext(),AddRestaurantActivity.class);
+        start.putExtra("EditMode",false);
         startActivity(start);
     }
     private void About(){

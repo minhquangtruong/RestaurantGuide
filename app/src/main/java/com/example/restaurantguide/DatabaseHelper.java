@@ -44,6 +44,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return id;
     }
+    public void updateInfo(String id, String name, String address, String phone, String desc, String tag, String rating){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(Constants.C_NAME,name);
+        values.put(Constants.C_ADDRESS,address);
+        values.put(Constants.C_PHONE,phone);
+        values.put(Constants.C_DESC,desc);
+        values.put(Constants.C_TAG,tag);
+        values.put(Constants.C_RATING,rating);
+        db.update(Constants.TABLE_NAME,values,Constants.C_ID+" = ?",new String[]{id});
+        db.close();
+    }
     public List<Restaurant> getRestaurant(){
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
