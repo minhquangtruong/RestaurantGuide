@@ -16,11 +16,12 @@
             android:src="@drawable/ic_baseline_restaurant_24"
             android:layout_width="70dp"
             android:layout_height="70dp"/>
+
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="9"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="9">
 
             <TextView
                 android:id="@+id/name"
@@ -30,7 +31,7 @@
                 android:gravity="center_vertical|start"
                 android:text="GoodRestaurant"
                 android:textAllCaps="true"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/address"
@@ -38,8 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical|start"
-                android:text="1223 Street, ON, CA"
-                ></TextView>
+                android:text="1223 Street, ON, CA" />
 
             <TextView
                 android:id="@+id/phone"
@@ -47,8 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical|start"
-                android:text="(233)323-2344"
-                ></TextView>
+                android:text="(233)323-2344" />
 
             <TextView
                 android:id="@+id/tag"
@@ -57,25 +56,39 @@
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical|start"
                 android:text="Vegan"
-                android:textStyle="italic"></TextView>
+                android:textStyle="italic" />
+
             <TextView
                 android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical|start"
-                android:textStyle="bold"
                 android:text="Rating: 4.5"
-                ></TextView>
-            
+                android:textStyle="bold" />
+
         </LinearLayout>
-        <ImageButton
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/edit"
-            android:src="@drawable/ic_baseline_edit_icon"
-            android:background="@null"
-            />
+
+            android:orientation="vertical">
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/remove"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:background="@null"
+                />
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/edit"
+                android:src="@drawable/ic_baseline_edit_icon"
+                android:background="@null"
+                />
+
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

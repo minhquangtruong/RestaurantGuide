@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ViewActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/display_text"
+        android:text="Restaurant Information"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/restaurant_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/display_text"
+        android:layout_marginTop="16dp"
+
+        android:padding="8dp"
+        android:background="@drawable/background"/>
+    <TextView
+        android:id="@+id/restaurant_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_name"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="@drawable/background"/>
+
+    <TextView
+        android:id="@+id/restaurant_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_address"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="@drawable/background"/>
+
+    <TextView
+        android:id="@+id/restaurant_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_phone"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="@drawable/background"/>
+
+    <TextView
+        android:id="@+id/restaurant_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_desc"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:completionThreshold="1"
+        android:background="@drawable/background"
+        />
+
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_tag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:saveEnabled="true"
+        android:stepSize=".5" />
+
+</RelativeLayout>

@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super .onOptionsItemSelected(item);
     }
+
     private void AddActivity(){
         Intent start = new Intent(getApplicationContext(),AddRestaurantActivity.class);
         start.putExtra("EditMode",false);

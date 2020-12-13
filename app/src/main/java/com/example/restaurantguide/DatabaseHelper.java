@@ -30,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
+    //Insert
     public long insertInfo(String name, String address, String phone, String desc, String tag, String rating){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -44,6 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return id;
     }
+    //Update
     public void updateInfo(String id, String name, String address, String phone, String desc, String tag, String rating){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -54,14 +55,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Constants.C_DESC,desc);
         values.put(Constants.C_TAG,tag);
         values.put(Constants.C_RATING,rating);
-        db.update(Constants.TABLE_NAME,values,Constants.C_ID+" = ?",new String[]{id});
+        db.update(Constants.TABLE_NAME,values,Constants.C_ID+" = ? ",new String[]{id});
         db.close();
     }
+    //Delete
+    public void delete(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Constants.TABLE_NAME,Constants.C_ID + " = ? ",new String[]{id});
+        db.close();
+    }
+
     public List<Restaurant> getRestaurant(){
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect = {Constants.C_NAME,Constants.C_ADDRESS,Constants.C_PHONE,Constants.C_DESC,Constants.C_TAG,Constants.C_RATING};
+        String[] sqlSelect = {Constants.C_ID,Constants.C_NAME,Constants.C_ADDRESS,Constants.C_PHONE,Constants.C_DESC,Constants.C_TAG,Constants.C_RATING};
         qb.setTables(Constants.TABLE_NAME);
         Cursor cursor = qb.query(db,sqlSelect,null,null,null ,null,null);
         //Get all restaurant object
@@ -69,6 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 Restaurant restaurant = new Restaurant();
+                restaurant.setId(cursor.getInt(cursor.getColumnIndex(Constants.C_ID)));
                 restaurant.setrName(cursor.getString(cursor.getColumnIndex(Constants.C_NAME)));
                 restaurant.setrAddress(cursor.getString(cursor.getColumnIndex(Constants.C_ADDRESS)));
                 restaurant.setrPhone(cursor.getString(cursor.getColumnIndex(Constants.C_PHONE)));
