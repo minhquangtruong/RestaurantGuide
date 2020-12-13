@@ -88,6 +88,13 @@
                 android:background="@null"
                 />
 
+            <ImageButton
+                android:id="@+id/map"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:src="@android:drawable/ic_menu_directions" />
+
         </LinearLayout>
     </LinearLayout>
 
