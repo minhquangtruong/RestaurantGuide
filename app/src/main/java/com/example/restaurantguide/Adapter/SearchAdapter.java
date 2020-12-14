@@ -4,20 +4,15 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.restaurantguide.AddRestaurantActivity;
 import com.example.restaurantguide.DatabaseHelper;
 import com.example.restaurantguide.EditActivity;
 import com.example.restaurantguide.MainActivity;
@@ -135,7 +130,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder>{
         builder.setTitle("Delete");
         builder.setMessage("Are you want to delete?");
         builder.setCancelable(false);
-        builder.setIcon(R.drawable.ic_baseline_delete_24);
+        builder.setIcon(R.drawable.ic_delete_restaurant);
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -158,7 +153,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder>{
         builder.setTitle("Update");
         builder.setMessage("Are you want to update?");
         builder.setCancelable(false);
-        builder.setIcon(R.drawable.ic_baseline_edit_icon);
+        builder.setIcon(R.drawable.ic_edit_restaurant);
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

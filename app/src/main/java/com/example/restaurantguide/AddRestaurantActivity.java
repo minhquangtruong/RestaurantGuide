@@ -23,7 +23,7 @@ public class AddRestaurantActivity extends AppCompatActivity {
 
     private DatabaseHelper dbHelper ;
 
-    private static final String[] tags = { "Vegetarian","Fast Food","Asian Cuisine","Western Cuisine","BBQ","Dessert","Drinks" };
+    private static final String[] tags = { "Vegetarian","Fast Food","Asian Cuisine","Western Cuisine","BBQ","Dessert","Drinks","Quiet","Fresh","Healthy","Noodles","Pizza", "Hamburger","Steak","Chinese Dumpling","Seafood","Fries","Party","Family-friendly","Sushi", "Sashimi","Birthday","Romantic","Highest Rated", "Hottest"};
 
 
     @Override
